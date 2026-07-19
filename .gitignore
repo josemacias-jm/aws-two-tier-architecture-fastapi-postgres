@@ -169,3 +169,15 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Terraform variable files containing secrets
+infra/terraform.tfvars
+*.auto.tfvars
+
+# Terraform state can contain database credentials
+infra/*.tfstate
+infra/*.tfstate.*
+infra/.terraform/
+
+# Generated kubeconfig
+infra/kubeconfig
