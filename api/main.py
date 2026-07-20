@@ -22,3 +22,10 @@ logger.info("Starting Journal API application...")
 
 app = FastAPI(title="Journal API", description="A simple journal API for tracking daily work, struggles, and intentions")
 app.include_router(journal_router)
+
+@app.get("/health")
+async def health_check() -> dict[str, str]:
+    """
+    Health check endpoint to verify that the API is running.
+    """
+    return {"status": "healthy"}
